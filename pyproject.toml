@@ -1,0 +1,31 @@
+[project]
+name = "mkdocs-windows-98"
+version = "0.0.0"
+description = "Windows 98 MkDocs Theme"
+readme = "README.md"
+requires-python = ">=3.9"
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Operating System :: POSIX",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: System Administrators",
+  "Topic :: Software Development :: Build Tools",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.9",
+  "Topic :: Utilities",
+  "Topic :: Software Development :: Documentation",
+]
+
+dependencies = [
+  "mkdocs>=1.5.3",
+]
+
+[project.entry-points."mkdocs.themes"]
+windows-98 = "mkdocs_windows_98"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"

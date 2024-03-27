@@ -1,0 +1,16 @@
+---
+# Project information
+site_name: Test MkDocs Windows 98
+site_url: https://example.com/
+
+# Repository
+repo_name: Test Windows 98
+repo_url: https://example.com
+
+# Theme
+theme:
+  name: windows-98
+
+# Plugins
+plugins:
+  - search
