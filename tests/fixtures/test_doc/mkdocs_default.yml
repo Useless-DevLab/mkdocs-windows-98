@@ -10,7 +10,3 @@ repo_url: https://example.com
 # Theme
 theme:
   name: windows-98
-
-# Plugins
-plugins:
-  - search

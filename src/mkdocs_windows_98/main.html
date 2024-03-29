@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-    {%- for path in config.extra_css %}
-      <link href="{{ path | url }}" rel="stylesheet">
-    {%- endfor %}
-  </head>
-  <body>
-    {{ page.content }}
+    {% include "head.html" %}
+    <body>
+		<div class="window mk-win-window">
+			<div class="title-bar top">
+				<div class="title-bar-text">{{ page.title }}</div>
+				<div class="title-bar-controls">
+				<button aria-label="Minimize"></button>
+				<button aria-label="Maximize"></button>
+				<button aria-label="Close"></button>
+				</div>
+			</div>
+			<div class="window-body">
+				<button>Click me</button>
+				<button>Click me</button>
+				<button>Click me</button>
+				<button>Click me</button>
+				<button>Click me</button>
+			</div>
+			<div class="window-body mk-win-page-content">
+				{{ page.content }}
+			</div>
+		</div>
+		<div class="window mk-win-task-bar">
+			<button class="mk-win-start-button"></button>
+		</div>
 
-    {%- for script in config.extra_javascript %}
-      {{ script | script_tag }}
-    {%- endfor %}
-  </body>
+        {%- for script in config.extra_javascript %}
+        {{ script | script_tag }}
+        {%- endfor %}
+    </body>
 </html>
