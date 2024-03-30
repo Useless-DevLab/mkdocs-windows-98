@@ -12,11 +12,9 @@
 				</div>
 			</div>
 			<div class="window-body">
-				<button>Click me</button>
-				<button>Click me</button>
-				<button>Click me</button>
-				<button>Click me</button>
-				<button>Click me</button>
+				{% for nav_item in nav %}
+				<button onclick="window.location.href='{{ nav_item.url|url }}';">{{ nav_item.title }}</button>
+				{% endfor %}
 			</div>
 			<div class="window-body mk-win-page-content">
 				{{ page.content }}
