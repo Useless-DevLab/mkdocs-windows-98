@@ -1,0 +1,34 @@
+<div class="window mk-win-window">
+    <div class="title-bar top">
+        <div class="title-bar-text">{{ page.title }}</div>
+        <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+        </div>
+    </div>
+    <section class="field-row" style="justify-content: flex-start">
+    {% for nav_item in nav %}
+        {% if nav_item.children %}
+            <div>
+                <button class="menu-bar">{{ nav_item.title }}</button>
+                    <div class="menu" style="width: 160px">
+                    <ul>
+                    {% for nav_item in nav_item.children %}
+                        <li onmousedown="window.location.href='{{ nav_item.url|url }}';">{{ nav_item.title }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <div>
+                <button class="menu-bar" onclick="window.location.href='{{ nav_item.url|url }}';">{{ nav_item.title }}</button>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </section>
+    <div class="separator"></div>
+    <div class="window-body mk-win-page-content">
+        {{ page.content }}
+    </div>
+</div>
