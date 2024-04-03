@@ -3,6 +3,9 @@ name = "mkdocs-windows-98"
 version = "0.0.0"
 description = "Windows 98 MkDocs Theme"
 readme = "README.md"
+authors = [
+  {name = "Useless DevLab", email = "useless.devlab@gmail.com"}
+]
 requires-python = ">=3.9"
 
 classifiers = [
@@ -29,3 +32,10 @@ windows-98 = "mkdocs_windows_98"
 [build-system]
 requires = ["setuptools>=43.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "pep621"
+update_changelog_on_bump = true

@@ -1,0 +1,18 @@
+---
+# Project information
+site_name: MkDocs Windows 98 Theme
+site_url: https://useless-devlab.github.io/mkdocs-windows-98/
+site_description: Windows 98 MkDocs Theme
+
+# Repository
+repo_name: mkdocs-windows-98
+repo_url: https://github.com/Useless-DevLab/mkdocs-windows-98
+edit_uri: blob/main/docs/
+
+# Theme
+theme:
+  name: windows-98
+
+# Plugins
+plugins:
+  - search
