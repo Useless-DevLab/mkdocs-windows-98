@@ -43,3 +43,71 @@ h1 {
     cursor: pointer;
     height: 2.25rem;
 }
+
+/* Workaround for menubar buttons with 98.css (see https://github.com/jdan/98.css/pull/80) */
+
+
+.menu {
+    font-family: "Pixelated MS Sans Serif", Arial;
+    -webkit-font-smoothing: none;
+    font-size: 11px;
+}
+
+button.menu-bar:focus {
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+}
+
+button.menu-bar:hover:not(:focus) {
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+.separator {
+    height: 0px;
+    width: 100%;
+    border-top:1px solid #808080;
+    border-bottom: 1px solid #ffffff;
+}
+
+button.menu-bar {
+    box-shadow: none;
+    min-width: 0;
+    padding: 0 6px;
+}
+
+button.menu-bar:focus + .menu {
+    visibility: visible;
+}
+
+.menu {
+    visibility: hidden;
+    position: absolute;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #ffffff;
+    background: #c0c0c0;
+    padding: 3px;
+    cursor: default;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    list-style-type: none;
+    padding: 3px 0 3px 16px;
+}
+
+.menu li:hover:not(.disabled) {
+    color: white;
+    background-color: #000080;
+}
+
+.menu li.disabled{
+    color: #808080;
+    text-shadow: 1px 1px 0 #ffffff;
+}
+
+.menu .separator {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
