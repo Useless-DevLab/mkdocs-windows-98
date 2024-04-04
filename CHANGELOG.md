@@ -1,3 +1,9 @@
+## 0.2.0 (2024-04-04)
+
+### Feat
+
+- add table of content inside doc window
+
 ## 0.1.0 (2024-04-03)
 
 ### Feat
