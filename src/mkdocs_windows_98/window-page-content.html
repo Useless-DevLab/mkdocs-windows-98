@@ -29,6 +29,35 @@
     </section>
     <div class="separator"></div>
     <div class="window-body mk-win-page-content">
-        {{ page.content }}
+        <div style="width: 200px; margin: 10px;">
+            <ul class="tree-view" style="height: 98%;">
+            {% for toc_item in page.toc %}
+                <li>
+                    <a href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+                    <ul>
+                    {% for toc_item in toc_item.children %}
+                        <li>
+                            <a href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+                            <ul>
+                            {% for toc_item in toc_item.children %}
+                                <li>
+                                    <a href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+                                    <ul>
+                                        {% for toc_item in toc_item.children %}
+                                            <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </div>
+        <div style="flex: 1; overflow-y: auto;">
+            {{ page.content }}
+        </div>
     </div>
 </div>

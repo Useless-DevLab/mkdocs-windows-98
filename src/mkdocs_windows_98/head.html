@@ -1,9 +1,9 @@
 <head>
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
     <meta charset="UTF-8" />
-    <link href="{{ base_url | url }}/icons/windows-98-icon.png" rel="icon">
+    <link href="{{ 'icons/windows-98-icon.png' | url }}" rel="icon">
     <link href="https://unpkg.com/98.css" rel="stylesheet">
-    <link href="{{ base_url | url }}/css/mkdocs-windows-98.css" rel="stylesheet">
+    <link href="{{ 'css/mkdocs-windows-98.css' | url }}" rel="stylesheet">
     {%- for path in config.extra_css %}
     <link href="{{ path | url }}" rel="stylesheet">
     {%- endfor %}

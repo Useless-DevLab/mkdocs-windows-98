@@ -6,6 +6,9 @@ dotenv: [".config/environments/.env"]
 vars:
   PYTHON: '{{.PYTHON | default "python3"}}'
 
+includes:
+  mkdocs: .taskfiles/mkdocs.yml
+
 tasks:
   default:
     cmds:
