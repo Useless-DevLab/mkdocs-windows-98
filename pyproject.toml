@@ -1,6 +1,6 @@
 [project]
 name = "mkdocs-windows-98"
-version = "0.2.0"
+version = "0.3.0"
 description = "Windows 98 MkDocs Theme"
 readme = "README.md"
 authors = [

@@ -1,3 +1,9 @@
+## 0.3.0 (2024-04-05)
+
+### Feat
+
+- add back, forward and contribute buttons
+
 ## 0.2.0 (2024-04-04)
 
 ### Feat
