@@ -1,4 +1,6 @@
 <div class="window mk-win-window">
+
+    <!-- Title bar -->
     <div class="title-bar top">
         <div class="title-bar-text">{{ page.title }}</div>
         <div class="title-bar-controls">
@@ -7,12 +9,15 @@
         <button aria-label="Close"></button>
         </div>
     </div>
+
+    <!-- Navigation -->
     <section class="field-row" style="justify-content: flex-start">
+        <div class="toolbar-drag-handle"></div>
     {% for nav_item in nav %}
         {% if nav_item.children %}
             <div>
                 <button class="menu-bar">{{ nav_item.title }}</button>
-                    <div class="menu" style="width: 160px">
+                <div class="menu" style="width: 160px">
                     <ul>
                     {% for nav_item in nav_item.children %}
                         <li onmousedown="window.location.href='{{ nav_item.url|url }}';">{{ nav_item.title }}</li>
@@ -27,8 +32,33 @@
         {% endif %}
     {% endfor %}
     </section>
+
     <div class="separator"></div>
+
+    <!-- Window toolbar -->
+    <section class="field-row" style="justify-content: flex-start; margin-top: 8px;">
+        <div class="toolbar-drag-handle"></div>
+        <!-- Previous page button -->
+        <button class="menu-bar" onclick="window.location.href='{{ page.previous_page.url | url }}';" {% if not page.previous_page %}disabled{% endif %}>
+            <div class="icon back-button-icon"></div>
+            <p style="margin: 0; margin-bottom: 3px;">Back</p>
+        </button>
+        <!-- Next page button -->
+        <button class="menu-bar" onclick="window.location.href='{{ page.next_page.url | url }}';" {% if not page.next_page %}disabled{% endif %}>
+            <div class="icon forward-button-icon"></div>
+            <p style="margin: 0; margin-bottom: 3px;">Forward</p>
+        </button>
+        <!-- Contribute button -->
+        <button class="menu-bar" onclick="window.location.href='{{ config.repo_url }}';">
+            <div class="icon contribute-button-icon"></div>
+            <p style="margin: 0; margin-bottom: 3px;">Contribute</p>
+        </button>
+    </section>
+
+    <!-- Window page content -->
     <div class="window-body mk-win-page-content">
+
+        <!-- TOC -->
         <div style="width: 200px; margin: 10px;">
             <ul class="tree-view" style="height: 98%;">
             {% for toc_item in page.toc %}
@@ -56,8 +86,12 @@
                 </li>
             {% endfor %}
         </div>
+
+        <!-- Page content -->
         <div style="flex: 1; overflow-y: auto;">
             {{ page.content }}
         </div>
+
     </div>
+
 </div>

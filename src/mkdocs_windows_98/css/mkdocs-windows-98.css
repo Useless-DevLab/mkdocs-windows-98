@@ -20,7 +20,7 @@ h1 {
     display: flex;
     background-color: white;
     box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
-    height: 92%;
+    height: 85%;
 }
 
 .mk-win-task-bar {
@@ -59,6 +59,10 @@ button.menu-bar:hover:not(:focus) {
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 }
 
+button.menu-bar:hover:disabled {
+    box-shadow: none;
+}
+
 .separator {
     height: 0px;
     width: 100%;
@@ -74,6 +78,33 @@ button.menu-bar {
 
 button.menu-bar:focus + .menu {
     visibility: visible;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    margin-top: 3px;
+}
+
+button.menu-bar > .icon {
+    background-image: url("../icons/browse-ui-icons-grayscale.png");
+}
+
+button.menu-bar:enabled:hover > .icon {
+    background-image: url("../icons/browse-ui-icons.png");
+}
+
+.back-button-icon {
+    background-position: 0px 0px;
+}
+
+.forward-button-icon {
+    background-position: -20px 0px;
+}
+
+.contribute-button-icon {
+    background-position: -180px 0px;
 }
 
 .menu {
@@ -108,4 +139,29 @@ button.menu-bar:focus + .menu {
 .menu .separator {
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+
+/* Toolbar drag handle */
+
+.toolbar-drag-handle {
+	flex: 0 0 auto;
+	width: 10px;
+	box-sizing: border-box;
+	align-self: stretch;
+	position: relative;
+	touch-action: none;
+}
+
+.toolbar-drag-handle::before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	width: 4px;
+	bottom: 1px;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
 }
