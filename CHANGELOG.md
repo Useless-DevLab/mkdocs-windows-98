@@ -1,3 +1,9 @@
+## 0.4.0 (2024-04-07)
+
+### Feat
+
+- **window-page-content**: add home button
+
 ## 0.3.0 (2024-04-05)
 
 ### Feat
