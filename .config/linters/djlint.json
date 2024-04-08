@@ -1,0 +1,8 @@
+{
+    "profile": "jinja",
+    "use_gitignore": true,
+    "per-file-ignores": {
+        "src/mkdocs_windows_98/main.html": "H016, H030, H031",
+        "src/mkdocs_windows_98/404.html": "H030, H031"
+    }
+}

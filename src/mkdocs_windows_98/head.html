@@ -1,6 +1,8 @@
 <head>
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
+    <meta name="description" content="{{ config['site_description'] }}"/>
+    <meta name="keywords" content="mkdocs,documentation,windows-98"/>
     <link href="{{ 'icons/windows-98-icon.png' | url }}" rel="icon">
     <link href="https://unpkg.com/98.css" rel="stylesheet">
     <link href="{{ 'css/mkdocs-windows-98.css' | url }}" rel="stylesheet">

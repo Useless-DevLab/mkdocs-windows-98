@@ -26,6 +26,12 @@ dependencies = [
   "mkdocs>=1.5.3",
 ]
 
+[project.optional-dependencies]
+lint = [
+  "djlint==1.34.0",
+  "yamllint==1.32.0",
+]
+
 [project.entry-points."mkdocs.themes"]
 windows-98 = "mkdocs_windows_98"
 
