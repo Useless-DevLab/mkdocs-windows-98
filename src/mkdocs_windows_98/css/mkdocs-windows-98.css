@@ -43,6 +43,29 @@ h1 {
     height: 2.25rem;
 }
 
+.mk-win-field-row-nav {
+    justify-content: flex-start;
+}
+
+.mk-win-field-row-window-toolbar {
+    justify-content: flex-start;
+    margin-top: 8px;
+}
+
+.mk-win-page-content-toc {
+    width: 200px;
+    margin: 10px;
+}
+
+.mk-win-page-content-toc > ul {
+    height: 98%;
+}
+
+.mk-win-page-content-page {
+    flex: 1;
+    overflow-y: auto;
+}
+
 /* Workaround for menubar buttons with 98.css (see https://github.com/jdan/98.css/pull/80) */
 
 .menu {
@@ -111,6 +134,11 @@ button.menu-bar:enabled:hover > .icon {
     background-position: -180px 0px;
 }
 
+button.menu-bar > p {
+    margin: 0;
+    margin-bottom: 3px;
+}
+
 .menu {
     visibility: hidden;
     position: absolute;
@@ -118,6 +146,7 @@ button.menu-bar:enabled:hover > .icon {
     background: #c0c0c0;
     padding: 3px;
     cursor: default;
+    width: 160px;
 }
 
 .menu ul {

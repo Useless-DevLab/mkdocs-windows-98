@@ -1,34 +1,31 @@
 ---
-name: pages
+name: lint
 
 on:  # yamllint disable-line rule:truthy
-  push:
+  pull_request:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
-  deploy:
+  lint:
+    if: "!startsWith(github.event.head_commit.message, 'bump:')"
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        linter: ["djlint", "yamllint"]
     env:
       TASK_VERSION: 3.35.1
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.12
+          python-version: "3.12"
       - name: Install Dependencies
         run: |
           wget https://github.com/go-task/task/releases/download/v$TASK_VERSION/task_linux_amd64.deb
           sudo dpkg -i task_linux_amd64.deb
           task bootstrap
-      - name: Publish MkDocs to Github Pages
-        run: .venv/bin/mkdocs gh-deploy --force
+      - name: Run linter ${{ matrix.linter }}
+        run: task lint:${{ matrix.linter }}
