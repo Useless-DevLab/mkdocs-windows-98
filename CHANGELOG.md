@@ -1,3 +1,9 @@
+## 0.4.1 (2024-04-10)
+
+### Fix
+
+- **window-page-content**: add filter url for home button
+
 ## 0.4.0 (2024-04-07)
 
 ### Feat
