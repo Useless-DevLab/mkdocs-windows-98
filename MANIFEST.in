@@ -1,0 +1,2 @@
+recursive-include src/mkdocs_windows_98 *.css *.html *.js *.map *.py *.svg *.woff *.woff2 *.yml *.png
+recursive-exclude * __pycache__
