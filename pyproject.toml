@@ -7,7 +7,6 @@ authors = [
   {name = "Useless DevLab", email = "useless.devlab@gmail.com"}
 ]
 requires-python = ">=3.9"
-
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Environment :: Console",
@@ -21,10 +20,14 @@ classifiers = [
   "Topic :: Utilities",
   "Topic :: Software Development :: Documentation",
 ]
-
 dependencies = [
   "mkdocs>=1.5.3",
 ]
+
+[project.urls]
+Documentation = "https://Useless-DevLab.github.io/mkdocs-windows-98/"
+Issues = "https://github.com/Useless-DevLab/mkdocs-windows-98/issues"
+Source = "https://github.com/Useless-DevLab/mkdocs-windows-98"
 
 [project.optional-dependencies]
 lint = [
